@@ -1,7 +1,7 @@
 {{ define "main" }}
-<ul>
+<ul style="padding: 0; list-style-type: none;">
   {{ range .Paginator.Pages }}
-  <li style="display: flex">
+  <li style="display: flex; padding-bottom: 3px;">
     <span style="flex: 50">
       <i>{{ .Date.Format "Jan 2, 2006" }}</i>
     </span>
@@ -21,7 +21,7 @@
 
 <div>
   {{ range .Site.Taxonomies.tags }}
-  <a href="{{ .Page.RelPermalink }}">#{{ lower .Page.Title }}</a>
+  <a href="{{ .Page.RelPermalink }}" style="font-size: small; margin-right: 10px">#{{ lower .Page.Title }}</a>
   {{ end }}
 </div>
 {{ end }}

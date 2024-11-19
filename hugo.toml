@@ -22,10 +22,6 @@ title = "Ben's Blog"
 
 [menu]
   [[menu.main]]
-    name = "About"
-    url = "/about"
-    weight = 3
-  [[menu.main]]
     name = "Github"
     url = "https://github.com/codekansas"
     weight = 3
@@ -33,7 +29,3 @@ title = "Ben's Blog"
     name = "Twitter"
     url = "https://x.com/benjamin_bolte"
     weight = 4
-  [[menu.main]]
-    name = "Wiki"
-    url = "https://wiki.bolte.cc"
-    weight = 5
