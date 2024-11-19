@@ -1,21 +1,27 @@
 {{ define "main" }}
-<ul class="post-list">
-  {{ range .Site.RegularPages.ByDate.Reverse }}
-  <li>
-    _{{ .Date.Format "Jan 2, 2006" }}_
-    <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+<ul>
+  {{ range .Paginator.Pages }}
+  <li style="display: flex">
+    <span style="flex: 50">
+      <i>{{ .Date.Format "Jan 2, 2006" }}</i>
+    </span>
+    <span style="flex: 100">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </span>
     {{ with .Params.tags }}
-    {{ range . }}
-    #{{ . }}
-    {{ end }}
+    <span style="flex: 50">
+      {{ range . }}
+      <a href="/tags/{{ lower . }}">#{{ lower . }}</a>
+      {{ end }}
+    </span>
     {{ end }}
   </li>
   {{ end }}
 </ul>
 
-<div class="tag-list">
+<div>
   {{ range .Site.Taxonomies.tags }}
-  <a href="{{ .Page.RelPermalink }}">#{{ .Page.Title }}</a>
+  <a href="{{ .Page.RelPermalink }}">#{{ lower .Page.Title }}</a>
   {{ end }}
 </div>
 {{ end }}

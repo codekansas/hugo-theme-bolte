@@ -6,12 +6,25 @@ title = "Ben's Blog"
   tag = 'tags'
 
 [params]
-  description = "Personal blog of Ben Bolte"
+  description = "Musings about math, neuroscience and robotics"
+  math = true
 
-[markup.highlight]
-  style = 'github'
+[markup]
+  [markup.highlight]
+    style = 'github'
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
 
 [menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 3
   [[menu.main]]
     name = "Github"
     url = "https://github.com/codekansas"
